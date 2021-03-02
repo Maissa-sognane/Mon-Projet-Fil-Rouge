@@ -2,25 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26840670-1f84-41ef-9ed3-e5c95fcde882" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/console" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/cache.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/framework.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/prod/routing.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/routing.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/test/framework.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/preload.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes/dev/framework.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Kernel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/ProfilControllers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/FilRouge.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FilRouge.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/api_platform.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/api_platform.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201116122842.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201116124138.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201116125324.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201116125835.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201116130137.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201116134611.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201124201652.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201124201926.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ProfilController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/ApprenantFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/ApprenantFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/CMFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/CMFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/FormateurFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/FormateurFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/ProfilFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/ProfilFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/TagFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/TagFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataPersister/ProfilDataPersister.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataPersister/ProfilDataPersister.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Apprenant.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Apprenant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/CM.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/CM.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Etudiant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Formateur.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Formateur.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/GroupeTag.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/GroupeTag.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Profil.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Profil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Tag.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/AddGroupeTag.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/AddGroupeTag.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/AddUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/AddUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profil/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profil/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,6 +149,10 @@
       <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
       <path value="$PROJECT_DIR$/vendor/symfony/browser-kit" />
       <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/swiftmailer-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
     </include_path>
   </component>
   <component name="ProjectId" id="1kOD4uHsLj726WDlINjqNcfzIL3" />
@@ -136,6 +162,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -290,48 +317,157 @@
       <workItem from="1606319215031" duration="331000" />
       <workItem from="1606353314013" duration="1909000" />
       <workItem from="1606380942839" duration="1645000" />
+      <workItem from="1606382686081" duration="142000" />
+      <workItem from="1606383301490" duration="1793000" />
+      <workItem from="1606385112073" duration="1793000" />
+      <workItem from="1606386921593" duration="1794000" />
+      <workItem from="1606388733525" duration="1817000" />
+      <workItem from="1606390587073" duration="1189000" />
+      <workItem from="1606396013306" duration="1861000" />
+      <workItem from="1606399002938" duration="1793000" />
+      <workItem from="1606400813104" duration="1795000" />
+      <workItem from="1606402626792" duration="1793000" />
+      <workItem from="1606404497336" duration="1869000" />
+      <workItem from="1606412014962" duration="1267000" />
+      <workItem from="1606418443378" duration="1790000" />
+      <workItem from="1606420264692" duration="1791000" />
+      <workItem from="1606422075603" duration="1642000" />
+      <workItem from="1606424117382" duration="1795000" />
+      <workItem from="1606425937820" duration="1807000" />
+      <workItem from="1606427766161" duration="1675000" />
+      <workItem from="1606429589638" duration="1793000" />
+      <workItem from="1606438713524" duration="1787000" />
+      <workItem from="1606464643671" duration="1791000" />
+      <workItem from="1606466480760" duration="1182000" />
+      <workItem from="1606469614665" duration="1554000" />
+      <workItem from="1606477075612" duration="1792000" />
+      <workItem from="1606478892119" duration="1792000" />
+      <workItem from="1606480702542" duration="1196000" />
+      <workItem from="1606486080150" duration="2705000" />
+      <workItem from="1606488966508" duration="1130000" />
+      <workItem from="1606490793324" duration="599000" />
+      <workItem from="1606508344688" duration="1793000" />
+      <workItem from="1606510157101" duration="1677000" />
+      <workItem from="1606512290716" duration="1796000" />
+      <workItem from="1606514109598" duration="1748000" />
+      <workItem from="1606566630738" duration="1820000" />
+      <workItem from="1606568469508" duration="1788000" />
+      <workItem from="1606571716859" duration="2300000" />
+      <workItem from="1606574303433" duration="1777000" />
+      <workItem from="1606576132622" duration="1445000" />
+      <workItem from="1606578020764" duration="1792000" />
+      <workItem from="1606579846592" duration="933000" />
+      <workItem from="1606581959719" duration="2000000" />
+      <workItem from="1606583981472" duration="790000" />
+      <workItem from="1606585845369" duration="1792000" />
+      <workItem from="1606587671371" duration="1792000" />
+      <workItem from="1606594106189" duration="3026000" />
+      <workItem from="1606597161967" duration="1042000" />
+      <workItem from="1606599051931" duration="1143000" />
+      <workItem from="1606600987736" duration="1125000" />
+      <workItem from="1606610916457" duration="904000" />
+      <workItem from="1606722005735" duration="2028000" />
+      <workItem from="1606724065519" duration="876000" />
+      <workItem from="1606725279061" duration="1191000" />
+      <workItem from="1606729478908" duration="1682000" />
+      <workItem from="1606731387115" duration="1842000" />
+      <workItem from="1606733305291" duration="1798000" />
+      <workItem from="1606735137040" duration="1794000" />
+      <workItem from="1606736949232" duration="1791000" />
+      <workItem from="1606738763874" duration="1402000" />
+      <workItem from="1606740590946" duration="1792000" />
+      <workItem from="1606742408112" duration="1189000" />
+      <workItem from="1606744842397" duration="1840000" />
+      <workItem from="1606746701554" duration="1726000" />
+      <workItem from="1606748539689" duration="1325000" />
+      <workItem from="1606750714556" duration="1441000" />
+      <workItem from="1606807473991" duration="1147000" />
+      <workItem from="1606810777485" duration="1792000" />
+      <workItem from="1606812588754" duration="1790000" />
+      <workItem from="1606814398291" duration="1549000" />
+      <workItem from="1606816214342" duration="1793000" />
+      <workItem from="1606818024854" duration="1793000" />
+      <workItem from="1606819841327" duration="1825000" />
+      <workItem from="1606821690015" duration="1807000" />
+      <workItem from="1606823513932" duration="1803000" />
+      <workItem from="1606825336440" duration="1794000" />
+      <workItem from="1606827150388" duration="1160000" />
+      <workItem from="1606831628030" duration="3866000" />
+      <workItem from="1606856721148" duration="20115000" />
+      <workItem from="1606984184053" duration="692000" />
+      <workItem from="1606989993805" duration="324000" />
+      <workItem from="1606991518451" duration="17807000" />
+      <workItem from="1607092278110" duration="170000" />
+      <workItem from="1607092578501" duration="366000" />
+      <workItem from="1607286738953" duration="8405000" />
+      <workItem from="1607347659900" duration="14888000" />
+      <workItem from="1607522369499" duration="10000" />
+      <workItem from="1607541434766" duration="207000" />
+      <workItem from="1607591503808" duration="169000" />
+      <workItem from="1607597924440" duration="45000" />
+      <workItem from="1608043911503" duration="70000" />
+      <workItem from="1608204951230" duration="88000" />
+      <workItem from="1608212631978" duration="254000" />
+      <workItem from="1608288574492" duration="23000" />
+      <workItem from="1608293916746" duration="185000" />
+      <workItem from="1608295848446" duration="3343000" />
+      <workItem from="1608300922890" duration="6324000" />
+      <workItem from="1608312561718" duration="474000" />
+      <workItem from="1608330861405" duration="2850000" />
+      <workItem from="1608389172146" duration="71000" />
+      <workItem from="1608390168699" duration="25000" />
+      <workItem from="1608390385629" duration="10000" />
+      <workItem from="1608391269991" duration="227000" />
+      <workItem from="1608399499515" duration="118000" />
+      <workItem from="1608402444219" duration="440000" />
+      <workItem from="1608403038516" duration="4241000" />
+      <workItem from="1608435581486" duration="26000" />
+      <workItem from="1608465356513" duration="47000" />
+      <workItem from="1608465600619" duration="195000" />
+      <workItem from="1608465941483" duration="29000" />
+      <workItem from="1608507215744" duration="336000" />
+      <workItem from="1608507936045" duration="1195000" />
+      <workItem from="1608568910602" duration="7141000" />
+      <workItem from="1608576535555" duration="3858000" />
+      <workItem from="1608581160608" duration="559000" />
+      <workItem from="1608620805314" duration="353000" />
+      <workItem from="1608925930139" duration="5000" />
+      <workItem from="1609161587271" duration="11000" />
+      <workItem from="1609749843240" duration="1458000" />
+      <workItem from="1609751399468" duration="211000" />
+      <workItem from="1610376146042" duration="6000" />
+      <workItem from="1611179092226" duration="210000" />
+      <workItem from="1611180210868" duration="6000" />
+      <workItem from="1611269854705" duration="1445000" />
+      <workItem from="1611315022771" duration="638000" />
+      <workItem from="1611340556984" duration="4790000" />
+      <workItem from="1611407933371" duration="1427000" />
+      <workItem from="1611501815895" duration="2109000" />
+      <workItem from="1611581308633" duration="716000" />
+      <workItem from="1611591853021" duration="10000" />
+      <workItem from="1611592498904" duration="1520000" />
+      <workItem from="1611614634793" duration="5687000" />
+      <workItem from="1611707466850" duration="10852000" />
+      <workItem from="1611825463330" duration="2606000" />
+      <workItem from="1611847430863" duration="5713000" />
+      <workItem from="1612189239959" duration="3304000" />
+      <workItem from="1612205396867" duration="473000" />
+      <workItem from="1612267807648" duration="2872000" />
+      <workItem from="1612360789438" duration="859000" />
+      <workItem from="1612911299690" duration="1729000" />
+      <workItem from="1613062523791" duration="39000" />
+      <workItem from="1613088152518" duration="2504000" />
+      <workItem from="1613147968224" duration="3093000" />
+      <workItem from="1613218444344" duration="9981000" />
+      <workItem from="1613260556276" duration="2486000" />
+      <workItem from="1613300402032" duration="11907000" />
+      <workItem from="1613477060852" duration="457000" />
+      <workItem from="1613554083913" duration="7326000" />
+      <workItem from="1613571414634" duration="1003000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="706" y="142" width="498" height="797" key="#com.intellij.ide.util.MemberChooser" timestamp="1606296116407">
-      <screen x="0" y="34" width="1920" height="1000" />
-    </state>
-    <state x="706" y="142" width="498" height="797" key="#com.intellij.ide.util.MemberChooser/0.34.1920.1000@0.34.1920.1000" timestamp="1606296116407" />
-    <state x="546" y="34" width="808" height="1000" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606302560407">
-      <screen x="0" y="34" width="1920" height="1000" />
-    </state>
-    <state x="546" y="34" width="808" height="1000" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.34.1920.1000@0.34.1920.1000" timestamp="1606302560407" />
-    <state x="627" y="235" width="655" height="605" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606315183417">
-      <screen x="0" y="34" width="1920" height="1000" />
-    </state>
-    <state x="627" y="235" width="655" height="605" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.34.1920.1000@0.34.1920.1000" timestamp="1606315183417" />
-    <state x="587" y="205" width="736" height="665" key="NewPhpClassDialog" timestamp="1606298668531">
-      <screen x="0" y="34" width="1920" height="1000" />
-    </state>
-    <state x="587" y="205" width="736" height="665" key="NewPhpClassDialog/0.34.1920.1000@0.34.1920.1000" timestamp="1606298668531" />
-    <state x="726" y="445" width="458" height="185" key="NewPhpFileDialog" timestamp="1606302591443">
-      <screen x="0" y="34" width="1920" height="1000" />
-    </state>
-    <state x="726" y="445" width="458" height="185" key="NewPhpFileDialog/0.34.1920.1000@0.34.1920.1000" timestamp="1606302591443" />
-    <state width="623" height="498" key="SwitcherDM" timestamp="1606247437997">
-      <screen x="0" y="34" width="1920" height="1000" />
-    </state>
-    <state width="623" height="498" key="SwitcherDM/0.34.1920.1000@0.34.1920.1000" timestamp="1606247437997" />
-    <state x="591" y="304" width="727" height="466" key="com.jetbrains.php.test.PhpNewTestDialog" timestamp="1606229027186">
-      <screen x="0" y="34" width="1920" height="1000" />
-    </state>
-    <state x="591" y="304" width="727" height="466" key="com.jetbrains.php.test.PhpNewTestDialog/0.34.1920.1000@0.34.1920.1000" timestamp="1606229027186" />
-    <state x="540" y="238" key="run.anything.popup" timestamp="1606137957681">
-      <screen x="0" y="34" width="1920" height="1000" />
-    </state>
-    <state x="540" y="238" key="run.anything.popup/0.34.1920.1000@0.34.1920.1000" timestamp="1606137957681" />
-    <state x="539" y="34" width="840" height="1034" key="search.everywhere.popup" timestamp="1605713872198">
-      <screen x="0" y="34" width="1920" height="1000" />
-    </state>
-    <state x="539" y="34" width="840" height="1034" key="search.everywhere.popup/0.34.1920.1000@0.34.1920.1000" timestamp="1605713872198" />
   </component>
 </project>

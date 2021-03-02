@@ -15,34 +15,30 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity(repositoryClass=ProfilRepository::class)
  * @ApiResource(
+ *
  *  attributes={
  *          "security"="is_granted('ROLE_ADMIN')",
  *          "security_message"="Vous n'avez pas l'acces",
  *          "filters"={"offer.date_filter"}
  *      },
  *     collectionOperations={
+ *     "post"={
+ *          "path"="admin/profils",
+ *     },
  *     "get"={
  *       "path"="admin/profils",
  *       "normalization_context"={"groups":"profil:read"},
- *
- *     },
- *     "post" = {
- *       "path"="admin/profils",
  *     },
  *     },
  *     itemOperations={
- *       "getProfilById"={
- *         "method"="GET",
- *         "path"="admin/profils/{id}/users",
- *         "route_name"="ListerprofilparId",
- *         "normalization_context"={"groups":"profil:read"},
- *     },
  *     "get"={
  *          "path"="admin/profil/{id}",
  *           "normalization_context"={"groups":"profil:read"},
  *     },
- *     "put"={
- *          "path"="admin/profil/{id}"
+ *     "putProfil"={
+ *          "method"="PUT",
+ *          "path"="admin/profil/{id}",
+ *          "route_name"="updateProfil"
  *     },
  *      "delete"={
  *          "path"="admin/profil/{id}"
@@ -67,18 +63,23 @@ class Profil
      * @Groups({"profil:read"})
      * @Assert\NotBlank(message="Champ profil vide")
      * @Assert\NotNull(message="Champ profil vide")
+     * @Groups({"profil:read"})
+     *
      *
      */
     private $libelle;
 
     /**
      * @ORM\Column(type="boolean")
+     *@Groups({"profil:read"})
+     *
      */
     private $isdeleted = false;
 
     /**
      * @ORM\OneToMany(targetEntity=User::class, mappedBy="profil")
      * @Groups({"profil:read"})
+     *
      *
      */
     private $users;

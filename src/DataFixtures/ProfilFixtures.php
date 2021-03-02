@@ -27,13 +27,13 @@ class ProfilFixtures extends Fixture
         $profil = new Profil();
         $profil->setLibelle(self::ADMIN_REFERENCE);
         $profil->setIsdeleted(false);
-     //   $manager->persist($profil);
+      //  $manager->persist($profil);
         $this->addReference(self::ADMIN_REFERENCE, $profil);
 
         $profil_Formateur = new Profil();
         $profil_Formateur->setLibelle(self::FORMATEUR_REFERENCE);
         $profil_Formateur->setIsdeleted(false);
-       // $manager->persist($profil_Formateur);
+      //  $manager->persist($profil_Formateur);
         $this->addReference(self::FORMATEUR_REFERENCE, $profil_Formateur);
 
         $profil_Apprenant = new Profil();
@@ -45,10 +45,10 @@ class ProfilFixtures extends Fixture
         $profil_CM = new Profil();
         $profil_CM->setLibelle(self::CM_REFERENCE);
         $profil_CM->setIsdeleted(false);
-      //  $manager->persist($profil_CM);
+     //   $manager->persist($profil_CM);
         $this->addReference(self::CM_REFERENCE, $profil_CM);
 
-       // $manager->flush();
+      //  $manager->flush();
     }
 
 }

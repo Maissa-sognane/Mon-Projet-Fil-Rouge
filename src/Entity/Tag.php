@@ -54,7 +54,7 @@ class Tag
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups({"grpetag:create", "grpetag:update"})
+     * @Groups({"grpetag:create", "grpetag:update", "tagpargroupe:read"})
      */
     private $id;
 
@@ -62,7 +62,7 @@ class Tag
      * @ORM\Column(type="string", length=255, unique=true)
      * @Assert\NotBlank(message="Champ libelle vide")
      * @Assert\NotNull(message="Champ libelle vide")
-     * @Groups({"grpetag:create", "grpetag:read", "grpetag:update"})
+     * @Groups({"grpetag:create", "grpetag:read", "grpetag:update", "tagpargroupe:read"})
      *
      */
     private $libelle;

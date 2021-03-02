@@ -30,8 +30,7 @@ class ApprenantFixtures extends Fixture implements DependentFixtureInterface
         $Apprenant->setPassword($password);
         $Apprenant->setProfil($this->getReference(ProfilFixtures::APPRENANT_REFERENCE));
        // $manager->persist($Apprenant);
-
-      //  $manager->flush();
+        //$manager->flush();
     }
 
     public function getDependencies()

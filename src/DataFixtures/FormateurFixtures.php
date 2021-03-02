@@ -28,9 +28,8 @@ class FormateurFixtures extends Fixture implements DependentFixtureInterface
         $password = $this->encoder->encodePassword($formateur, "passer");
         $formateur->setPassword($password);
         $formateur->setProfil($this->getReference(ProfilFixtures::FORMATEUR_REFERENCE));
-       // $manager->persist($formateur);
-
-      //  $manager->flush();
+    //    $manager->persist($formateur);
+     //   $manager->flush();
     }
 
     public function getDependencies()

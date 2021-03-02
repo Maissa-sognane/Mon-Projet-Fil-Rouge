@@ -74,12 +74,12 @@ class TagFixtures extends Fixture
                     $tag->setDescriptif($value);
                 }
                 $tag->setIsdeleted(false);
-                $manager->persist($tag);
+             //   $manager->persist($tag);
                 $groupetag->setLibelle($GroupeTag[$i]['libelle']);
                 $groupetag->addTag($tag);
-                $manager->persist($groupetag);
+           //   $manager->persist($groupetag);
             }
-            $manager->flush();
+         //  $manager->flush();
         }
 
     }

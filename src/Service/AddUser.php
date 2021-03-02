@@ -31,16 +31,18 @@ class AddUser
         if(isset($isdeleted)){
             $user->setIsdeleted($isdeleted);
         }
+        /*
         if($request->files->get("avatar") !== null){
             $avatar = $request->files->get("avatar");
             $avatar = fopen($avatar->getRealPath(),"rb");
             $user->setAvatar($avatar);
         }
+         if($request->files->get("avatar") !== null){
+            fclose($avatar);
+        }*/
+
         $manager->persist($user);
         $manager->flush();
-        if($request->files->get("avatar") !== null){
-            fclose($avatar);
-        }
     }
 
     public function serviceReadUser($repository){

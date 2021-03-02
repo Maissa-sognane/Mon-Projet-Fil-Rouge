@@ -12,10 +12,16 @@ use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\BooleanFilter;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
+use ApiPlatform\Core\Annotation\ApiSubresource;
+
 
 /**
  * @ORM\Entity(repositoryClass=GroupeTagRepository::class)
  * @ApiResource (
+ * attributes={
+ *          "security"="is_granted('ROLE_FORMATEUR')",
+ *          "security_message"="Vous n'avez pas l'acces aux ressources"
+ *      },
  *      routePrefix="/admin",
  *      collectionOperations={
  *       "get"={
@@ -44,7 +50,11 @@ use Symfony\Component\Validator\Constraints as Assert;
  *     },
  *   "delete"={
  *          "path"="/grptag/{id}"
- *     }
+ *     },
+ *    "get"={
+ *          "path"="/grptag/{id}/tags",
+ *          "normalization_context"={"groups":"tagpargroupe:read"},
+ *     },
  *     }
  * )
  * @UniqueEntity(
@@ -52,6 +62,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *     errorPath="libelle",
  *     message="libelle existe deja."
  * )
+ * @ApiFilter(BooleanFilter::class, properties={"isdeleted"})
  */
 class GroupeTag
 {
@@ -59,7 +70,7 @@ class GroupeTag
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups({"grpetag:read", "grpetag:update"})
+     * @Groups({"grpetag:read", "grpetag:update", "tagpargroupe:read"})
      */
     private $id;
 
@@ -80,7 +91,8 @@ class GroupeTag
 
     /**
      * @ORM\ManyToMany(targetEntity=Tag::class, inversedBy="groupeTags")
-     * @Groups({"grpetag:create", "grpetag:read", "grpetag:update"})
+     * @Groups({"grpetag:create", "grpetag:read", "grpetag:update", "tagpargroupe:read"})
+     *  @ApiSubresource
      */
     private $tag;
 

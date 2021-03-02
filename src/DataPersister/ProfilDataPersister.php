@@ -27,6 +27,7 @@ class ProfilDataPersister implements DataPersisterInterface
     public function persist($data)
     {
         // TODO: Implement persist() method.
+        dd($data);
         $this->entityManager->persist($data);
         $this->entityManager->flush();
     }

@@ -16,6 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoder;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Authenticator\Passport\UserPassportInterface;
+use Symfony\Component\Serializer\Exception\ExceptionInterface;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use App\Entity\User;
@@ -41,13 +42,31 @@ class UserController extends AbstractController
      * @param ProfilRepository $profilRepository
      * @param UserPasswordEncoderInterface $encoder
      * @param AddUser $addUser
-     * @return JsonResponse
+     * @return string
+     * @throws ExceptionInterface
      */
     public function enregistrerUsers(Request $request,
                                 SerializerInterface $serializer, ValidatorInterface $validator, EntityManagerInterface $manager,
                                     ProfilRepository $profilRepository, UserPasswordEncoderInterface $encoder, AddUser $addUser)
     {
+
         $userJson = $request->request->all();
+        if(!is_array($userJson)){
+            $userJson = $serializer->encode($userJson, 'json');
+        }
+        /*
+        if(is_array($userJson) === false){
+            $userJson = $serializer->decode($userJson, 'json');
+        }
+
+        if($userJson === []){
+            $userJson = $request->getContent();
+            $avatar = $request->files->get("avatar");
+            $avatar = fopen($avatar->getRealPath(),"rb");
+            $userJson = $serializer->decode($userJson, 'json');
+        }
+         */
+
         $profil = explode("/", $userJson["profil"]);
         $profil = $profilRepository->find($profil[3]);
         if(isset($profil)){
@@ -65,8 +84,17 @@ class UserController extends AbstractController
                 if($profil->getLibelle() === "APPRENANT"){
                     $userTab = $serializer->denormalize($userJson, Apprenant::class);
                 }
+                if($request->files->get("avatar") !== null){
+                    $avatar = $request->files->get("avatar");
+                    $avatar = fopen($avatar->getRealPath(),"rb");
+                    $userTab->setAvatar($avatar);
+                }
+                if($request->files->get("avatar") !== null){
+                //    fclose($avatar);
+                }
                 $addUser->serviceCreateUser($userTab, $userJson,$encoder, $request, $manager, false);
-                return new JsonResponse("success", Response::HTTP_OK, [], true);
+                $userObjet =  $serializer->serialize($userJson, "json");
+                return new JsonResponse($userObjet, Response::HTTP_CREATED, [], true);
             }
             else{
                 return $this->json("Erreur",Response::HTTP_BAD_REQUEST);
@@ -91,14 +119,27 @@ class UserController extends AbstractController
      * @param $id
      * @param UserRepository $userRepository
      * @param AddUser $serviceUser
+     * @param SerializerInterface $serializer
      * @return JsonResponse
      */
 
     public function updateUser(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder,
-                               $id, UserRepository $userRepository, AddUser $serviceUser){
+                               $id, UserRepository $userRepository, AddUser $serviceUser, SerializerInterface $serializer){
+/*
+        if($id !== null){
+            $user = $userRepository->find($id);
+        }
+        else{
 
-        $user = $userRepository->find($id);
-        $userAjouter = $request->request->all();
+        }
+*/
+       // $userAjouter = $request->request->all();
+        $userAjouter = $request->getContent();
+        $userAjouter = $serializer->decode($userAjouter, 'json');
+        $email = $userAjouter['email'];
+        $user = $userRepository->findOneByEmail($email);
+       // $isdeleted = $user->getIsdeleted();
+      //  dd($user->getIsdeleted());
         if(isset($userAjouter['isdeleted'])){
             $isdeleted = $userAjouter['isdeleted'];
         }else{
@@ -106,8 +147,6 @@ class UserController extends AbstractController
         }
         $serviceUser->serviceCreateUser($user, $userAjouter, $encoder, $request, $manager, $isdeleted);
         return new JsonResponse("success", Response::HTTP_OK, [], true);
-
-
     }
 
 }

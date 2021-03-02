@@ -29,8 +29,7 @@ class CMFixtures extends Fixture implements DependentFixtureInterface
         $password = $this->encoder->encodePassword($cm, "passer");
         $cm->setPassword($password);
         $cm->setProfil($this->getReference(ProfilFixtures::CM_REFERENCE));
-       // $manager->persist($cm);
-
+     //   $manager->persist($cm);
      //   $manager->flush();
     }
 

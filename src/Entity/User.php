@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 use App\Entity\Formateur;
@@ -36,12 +38,12 @@ use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\BooleanFilter;
  *          "route_name"="saveUser",
  *          "method"="POST",
  *          "deserialize"=false,
+ *
  *     }
  *     },
  *     itemOperations={
  *      "get"={
- *         "path"="formateur/{id}",
- *         "defaults"={"id"=null},
+ *          "path"="admin/user/{id}",
  *     },
  *       "putUser"={
  *          "path"="admin/user/{id}",
@@ -64,6 +66,7 @@ class User implements UserInterface
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      * @Groups({"apprenant:write"})
+     * @Groups({"user:write", "profil:read"})
      */
     private $id;
 
@@ -74,6 +77,7 @@ class User implements UserInterface
      * @Assert\NotNull
      * @Assert\Unique
      * @Groups({"user:write"})
+     * @Groups ({"promo_write"})
      */
     private $email;
 
@@ -90,24 +94,28 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"user:write", "formateurs:read"})
+     * @Groups({"user:write", "formateurs:read", "promo:read", "promogrpeprincipal:read"})
+     * @Groups ({"refapprenantattente:read", "profil:read"})
      */
     private $prenom;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"user:write", "formateurs:read"})
+     * @Groups({"user:write", "formateurs:read", "promo:read", "promogrpeprincipal:read"})
+     * @Groups ({"refapprenantattente:read", "profil:read"})
      */
     private $nom;
 
     /**
      * @ORM\Column(type="blob", nullable=true)
+     * @Groups({"user:write", "profil:read"})
      *
      */
     private $avatar;
 
     /**
      * @ORM\Column(type="boolean")
+     * @Groups({"user:write", "profil:read"})
      */
     private $isdeleted;
 
@@ -117,6 +125,28 @@ class User implements UserInterface
      *
      */
     private $profil;
+
+    /**
+     * @ORM\OneToMany(targetEntity=GroupeCompetence::class, mappedBy="user")
+     */
+    private $groupeCompetences;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Promo::class, mappedBy="user")
+     *
+     */
+    private $promos;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $islogging=false;
+
+    public function __construct()
+    {
+        $this->groupeCompetences = new ArrayCollection();
+        $this->promos = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -222,7 +252,12 @@ class User implements UserInterface
 
     public function getAvatar()
     {
-        return $this->avatar;
+        if($this->avatar){
+            $this->avatar = stream_get_contents($this->avatar);
+            $g=base64_encode($this->avatar);
+            return $g;
+        }
+        return null;
     }
 
     public function setAvatar($avatar): self
@@ -252,6 +287,78 @@ class User implements UserInterface
     public function setProfil(?Profil $profil): self
     {
         $this->profil = $profil;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|GroupeCompetence[]
+     */
+    public function getGroupeCompetences(): Collection
+    {
+        return $this->groupeCompetences;
+    }
+
+    public function addGroupeCompetence(GroupeCompetence $groupeCompetence): self
+    {
+        if (!$this->groupeCompetences->contains($groupeCompetence)) {
+            $this->groupeCompetences[] = $groupeCompetence;
+            $groupeCompetence->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGroupeCompetence(GroupeCompetence $groupeCompetence): self
+    {
+        if ($this->groupeCompetences->removeElement($groupeCompetence)) {
+            // set the owning side to null (unless already changed)
+            if ($groupeCompetence->getUser() === $this) {
+                $groupeCompetence->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Promo[]
+     */
+    public function getPromos(): Collection
+    {
+        return $this->promos;
+    }
+
+    public function addPromo(Promo $promo): self
+    {
+        if (!$this->promos->contains($promo)) {
+            $this->promos[] = $promo;
+            $promo->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removePromo(Promo $promo): self
+    {
+        if ($this->promos->removeElement($promo)) {
+            // set the owning side to null (unless already changed)
+            if ($promo->getUser() === $this) {
+                $promo->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getIslogging(): ?string
+    {
+        return $this->islogging;
+    }
+
+    public function setIslogging(?string $islogging): self
+    {
+        $this->islogging = $islogging;
 
         return $this;
     }

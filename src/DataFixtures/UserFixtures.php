@@ -28,9 +28,9 @@ class UserFixtures extends Fixture
         $password = $this->encoder->encodePassword($admin, "passer");
         $admin->setPassword($password);
         $admin->setProfil($this->getReference(ProfilFixtures::ADMIN_REFERENCE));
-       // $manager->persist($admin);
+     //  $manager->persist($admin);
 
-       // $manager->flush();
+    //   $manager->flush();
     }
 
 
